@@ -90,6 +90,10 @@ body {
     cursor: pointer;
 }
 
+.primary-button:is(:hover, :focus) {
+    background-color: var(--hover-background);
+}
+
 .secondary-button {
     transition: color var(--animation),
     background-color var(--animation),
@@ -110,11 +114,6 @@ body {
     cursor: pointer;
 }
 
-                            /* hovers */
-.primary-button:is(:hover, :focus) {
-    background-color: var(--hover-background);
-}
-
 .secondary-button:is(:hover, :focus) {
     color: var(--hover-text-color);
     background-color: var(--hover-background);
@@ -123,31 +122,6 @@ body {
         0px 2px 1px rgba(0, 0, 0, 0.08), 
         0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-}
-
-.nav-link:is(:hover, :focus),
-.address-link:is(:hover, :focus) {
-    color: var(--logo-text-color)
-}
-
-.portfolio-link:hover { 
-    box-shadow: 
-        0px 1px 6px rgba(46, 47, 66, 0.08), 
-        0px 1px 1px rgba(46, 47, 66, 0.16), 
-        0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.team-soc-link:is(:hover, :focus) {
-    background-color: var(--hover-background);
-}
-
-.cust-link:is(:hover, :focus) {
-    border: 1px solid var(--hover-background);
-    fill: var(--hover-background);
-}
-
-.team-soc-link.ft:is(:hover, :focus) {
-    background-color: #31D0AA;
 }
 
                             /* header */
@@ -193,8 +167,14 @@ body {
     letter-spacing: 0.02em;
 }
 
+.nav-link:is(:hover, :focus),
+.address-link:is(:hover, :focus) {
+    color: var(--hover-background)
+}
+
 .current {
     position: relative;
+    color: var(--hover-background)
 }
 .current::after {
     content: '';
@@ -370,6 +350,9 @@ body {
     justify-content: center;
     border-radius: 50%;
 }
+.team-soc-link:is(:hover, :focus) {
+    background-color: var(--hover-background);
+}
 
 .team-soc-icon {
     width: 16px;
@@ -406,6 +389,11 @@ body {
     fill: #8E8F99;
 }
 
+.cust-link:is(:hover, :focus) {
+    border: 1px solid var(--hover-background);
+    fill: var(--hover-background);
+}
+
 .cust-icon {
     width: 104px;
     height: 56px;
@@ -439,6 +427,13 @@ body {
     transition: box-shadow var(--animation);
 
     display: block;
+}
+
+.portfolio-link:hover { 
+    box-shadow: 
+        0px 1px 6px rgba(46, 47, 66, 0.08), 
+        0px 1px 1px rgba(46, 47, 66, 0.16), 
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-img {
@@ -510,6 +505,10 @@ body {
     text-transform: uppercase;
 }
 
+.footer-div-media {
+    margin-right: 80px;
+}
+
 .footer-text.media {
     margin-top: 0;
     margin-bottom: 16px;
@@ -539,12 +538,66 @@ body {
     background-color: rgba(255, 255, 255, 0.1);;
 }
 
+.team-soc-link.ft:is(:hover, :focus) {
+    background-color: #31D0AA;
+}
+
 .team-soc-icon.ft {
     width: 24px;
     height: 24px;
     fill: #8E8F99;
 }
 
+.footer-form {
+    display: flex;
+}
+.footer-email {
+    margin-right: 24px;
+    padding-left: 16px;
+    width: 264px;
+    height: 40px;
+
+    color: var(--footer-text-color);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    background: var(--footer-background)
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.footer-email::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
+
+.footer-button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+
+    display: flex;
+    width: 165px;
+    height: 40px;
+    gap: 16px;
+
+    border-radius: 4px;
+    color: var(--hero-text-color);
+    background-color: var(--button-hero-background);
+    border: 1px solid var(--button-hero-background);
+
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.footer-button:is(:hover, :focus) {
+    background-color: var(--hover-background);
+}
                             /* --- modal window ---*/
 .backdrop {
     position: fixed;
@@ -579,6 +632,7 @@ body {
     margin-left: auto;
     padding: 8px;
 
+    fill: #000000;
     width: 24px;
     height: 24px;
     background: var(--border-color);
@@ -586,6 +640,11 @@ body {
     border-radius: 50%;
     display: flex;
     justify-content: center
+}
+
+.modal-close:is(:hover, :focus) {
+    fill: #FFFFFF;
+    background: var(--hover-background)
 }
 
 .is-hidden {
@@ -598,6 +657,126 @@ body {
     transform: translate(-50%, -50%) scale(0);
 }
 
+.modal-title {
+    margin-top: 24px;
+    margin-bottom: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--title-text-color);
+}
+
+.modal-input-text {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
+
+.input-wrap {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    position: relative;
+}
+.modal-input {
+    padding-left: 38px;
+
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.modal-input:focus {
+    border-color: var(--button-hero-background);
+}
+
+.modal-input:focus + .modal-icon {
+    fill: var(--button-hero-background);
+}
+.modal-icon {
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.textarea {
+    margin-top: 4px;
+    padding-top: 8px;
+    padding-left: 16px;
+
+    width: 360px;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    resize: none;
+}
+
+.textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox:checked + .policy-text::before {
+    background-color: var(--hover-background);
+    border: none;
+    background-image: url(../images/icon/check.svg);
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.policy-text {
+    margin-top: 16px;
+    margin-bottom: 24px;
+
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    color: #757575;
+    display: flex;
+}
+
+.policy-text::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.policy-link {
+    margin-left: 4px;
+    color: var(--logo-text-color);
+}
+.modal-button {
+    padding: 16px 32px;
+    margin-left: 95px;
+
+    min-width: 169px;
+    height: 56px;
+
+    border-radius: 4px;
+    color: var(--hero-text-color);
+    background-color: var(--button-hero-background);
+    border: 1px solid var(--button-hero-background);
+
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal-button:is(:hover, :focus) {
+    background-color: var(--hover-background);
+}
                             /* ---   --- */
 
 /* Avtark maid it */
